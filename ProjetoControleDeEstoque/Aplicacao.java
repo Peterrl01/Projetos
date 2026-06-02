@@ -15,9 +15,9 @@ public class Aplicacao {
         Item[] vet = new Item[5];
         vet[0] = new Acessorio("Camisa", 10, 2, 10);
         vet[1] = new Acessorio("saia", 10, 2, 10);
-        vet[2] = new RoupaPMG(3, 4, 6, 3, 9);
+        vet[2] = new RoupaPMG(3, 4, 6, 3, 9, "Camisa Vermelha");
         vet[3] = new RoupaTamahoUnico("Saia de praia", 3, 1, 10, "M");
-        vet[4] = new RoupaPMG(3, 4, 6, 3, 9);
+        vet[4] =  new Acessorio("Camisa Preta", 10, 2, 10);;
 
         int opcao=0;
         while (opcao != 5){
@@ -26,9 +26,9 @@ public class Aplicacao {
             System.out.println("Escolha um produto para vender:");
             System.out.println("0 - Camisa");
             System.out.println("1 - Saia");
-            System.out.println("2 - Roupa PMG 1");
+            System.out.println("2 - Camisa Vermelha");
             System.out.println("3 - Saída de praia");
-            System.out.println("4 - Roupa PMG 2");
+            System.out.println("4 - Camisa Preta");
             System.out.println("5 - Sair do sistema");
             System.out.print("Digite sua opção: ");
 
