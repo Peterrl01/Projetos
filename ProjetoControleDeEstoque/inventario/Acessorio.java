@@ -1,10 +1,13 @@
-package ProjetoControleDeEstoque;
+package ProjetoControleDeEstoque.inventario;
+
+import ProjetoControleDeEstoque.abstracoes.Item;
+import ProjetoControleDeEstoque.abstracoes.Peca;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public  class  Acessorio extends Peca implements Item{
-    protected int quantiadeVendida;
+public  class  Acessorio extends Peca implements Item {
+    protected int quantidadeVendida;
 
     public Acessorio(String descricao, int quantidade, int estoqueMinimo, int estoqueMaximo) {
         super(descricao, quantidade, estoqueMinimo, estoqueMaximo);

@@ -1,4 +1,4 @@
-package ProjetoControleDeEstoque;
+package ProjetoControleDeEstoque.abstracoes;
 
 public abstract class Peca {
     protected String decricao;
