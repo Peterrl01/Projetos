@@ -19,25 +19,18 @@ public abstract class Peca {
 
     public abstract void venda();
 
-
-    public String getDecricao() {
-        return decricao;
-    }
-
     public void reposicaoEstoque(){
         if (this.quantidade < this.estoqueMinimo) {
             this.quantidade = this.estoqueMaximo;
         }
     }
 
-    public void setDecricao(String decricao) {
-        this.decricao = decricao;
-    }
+    public String getDecricao() { return decricao; }
+    public void setDecricao(String decricao) { this.decricao = decricao; }
 
     public int getQuantidade() {
         return quantidade;
     }
-
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
@@ -45,7 +38,6 @@ public abstract class Peca {
     public int getEstoqueMinimo() {
         return estoqueMinimo;
     }
-
     public void setEstoqueMinimo(int estoqueMinimo) {
         this.estoqueMinimo = estoqueMinimo;
     }
@@ -53,7 +45,6 @@ public abstract class Peca {
     public int getEstoqueMaximo() {
         return estoqueMaximo;
     }
-
     public void setEstoqueMaximo(int estoqueMaximo) {
         this.estoqueMaximo = estoqueMaximo;
     }

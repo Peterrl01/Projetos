@@ -19,6 +19,7 @@ public class RoupaPMG implements Item {
         this.estoqueMaximo = estoqueMaximo;
     }
 
+    @Override
     public void venda() {
         Scanner sc = new Scanner(System.in);
 
@@ -28,13 +29,14 @@ public class RoupaPMG implements Item {
         String tamanho = sc.nextLine().trim().toUpperCase();
 
         switch (tamanho) {
-            case "P":
-                    quantidadeP--;
-            case "M":
-                    quantidadeM--;
+            case "1":
+                this.quantidadeP--;
                 break;
-            case "G":
-                    quantidadeG--;
+            case "2":
+                this.quantidadeM--;
+                break;
+            case "3":
+                this.quantidadeG--;
                 break;
             default:
                 System.out.println("Tamanho inválido! A venda não foi processada.");
@@ -42,19 +44,21 @@ public class RoupaPMG implements Item {
         }
     }
 
+    @Override
     public void reposicaoEstoque(){
-        if (quantidadeP < estoqueMinimo ){
-            quantidadeP = estoqueMaximo;
+        if (this.quantidadeP < this.estoqueMinimo ){
+            this.quantidadeP = this.estoqueMaximo;
         }
-        if (quantidadeM < estoqueMinimo ){
-            quantidadeM = estoqueMaximo;
+        if (this.quantidadeM < this.estoqueMinimo ){
+            this.quantidadeM = this.estoqueMaximo;
         }
-        if (quantidadeG < estoqueMinimo ){
-            quantidadeG = estoqueMaximo;
+        if (this.quantidadeG < this.estoqueMinimo ){
+            this.quantidadeG = this.estoqueMaximo;
         }
     }
 
+    @Override
     public void mostrarEstoque() {
-        System.out.println("Estoque PMG -> P: " + quantidadeP + " | M: " + quantidadeM + " | G: " + quantidadeG);
+        System.out.println("Estoque PMG -> P: " + this.quantidadeP + " | M: " + this.quantidadeM + " | G: " + this.quantidadeG);
     }
 }

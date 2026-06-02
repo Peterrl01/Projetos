@@ -16,7 +16,7 @@ public class Aplicacao {
         vet[0] = new Acessorio("Camisa", 10, 2, 10);
         vet[1] = new Acessorio("saia", 10, 2, 10);
         vet[2] = new RoupaPMG(3, 4, 6, 3, 9);
-        vet[3] = new RoupaTamahoUnico("Saia de praia", 3, 1, 10);
+        vet[3] = new RoupaTamahoUnico("Saia de praia", 3, 1, 10, "M");
         vet[4] = new RoupaPMG(3, 4, 6, 3, 9);
 
         int opcao=0;
@@ -51,7 +51,7 @@ public class Aplicacao {
            }
         }
 
-        System.out.println("ESTOQUE FINAL");
+        System.out.println("\n--- ESTOQUE FINAL ---");
         for (int i = 0; i < vet.length; i++) {
             vet[i].mostrarEstoque();
         }

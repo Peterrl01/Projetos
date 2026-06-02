@@ -13,19 +13,32 @@ public  class  Acessorio extends Peca implements Item {
         super(descricao, quantidade, estoqueMinimo, estoqueMaximo);
     }
 
+    @Override
     public void venda(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Quantidade Vendida : ");
-       try {
+        System.out.print("Quantidade Vendida : ");
+
+        try {
            int quantidadeVendida = sc.nextInt();
-           setQuantidade(getQuantidade() - quantidadeVendida); // despois testar this.quantiade - quantidadeVendida;
-       }catch (InputMismatchException e){
+
+           while (this.getEstoqueMaximo() < this.quantidadeVendida){
+               System.out.println("Erro: você inseriu uma quantidade maior que o estoque atual! Insira a quantidade vendida novamente.");
+
+               System.out.print("Quantidade Vendida : ");
+               quantidadeVendida = sc.nextInt();
+           }
+
+           setQuantidade(this.getEstoqueMaximo() - quantidadeVendida);
+
+        } catch (InputMismatchException e){
+
            System.out.println("Erro: Digite apenas números válidos!");
            sc.nextLine();
-       }
-//        if (quantidadeVendida <= 0){
-//            System.out.println("Quantidade Vendida invalida!");
-//            return; //depois testar sem o return
-//        }
-    };
+        }
+    }
+
+    @Override
+    public void mostrarEstoque() {
+        System.out.println("Produto: " + this.getDecricao() + " | Estoque atual: " + this.getQuantidade());
+    }
 }
