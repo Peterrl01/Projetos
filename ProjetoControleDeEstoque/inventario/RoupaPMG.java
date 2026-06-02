@@ -10,13 +10,15 @@ public class RoupaPMG implements Item {
     protected int quantidadeG;
     protected int estoqueMinimo;
     protected int estoqueMaximo;
+    protected String descricao;
 
-    public RoupaPMG(int quantidadeP, int quantidadeM, int quantidadeG, int estoqueMinimo, int estoqueMaximo) {
+    public RoupaPMG(int quantidadeP, int quantidadeM, int quantidadeG, int estoqueMinimo, int estoqueMaximo, String descricao) {
         this.quantidadeP = quantidadeP;
         this.quantidadeM = quantidadeM;
         this.quantidadeG = quantidadeG;
         this.estoqueMinimo = estoqueMinimo;
         this.estoqueMaximo = estoqueMaximo;
+        this.descricao = descricao;
     }
 
     @Override
@@ -59,6 +61,10 @@ public class RoupaPMG implements Item {
 
     @Override
     public void mostrarEstoque() {
-        System.out.println("Estoque PMG -> P: " + this.quantidadeP + " | M: " + this.quantidadeM + " | G: " + this.quantidadeG);
+        System.out.println("Produto: " + this.descricao + " Estoque PMG -> P: " + this.quantidadeP + " | M: " + this.quantidadeM + " | G: " + this.quantidadeG);
+    }
+
+    public String getDescricao(){
+        return this.descricao;
     }
 }
